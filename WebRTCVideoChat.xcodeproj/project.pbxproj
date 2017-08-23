@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2772974C1F4D317A009D3044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772974B1F4D317A009D3044 /* AppDelegate.swift */; };
+		2772974E1F4D317A009D3044 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2772974D1F4D317A009D3044 /* ViewController.swift */; };
+		277297511F4D317A009D3044 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2772974F1F4D317A009D3044 /* Main.storyboard */; };
+		277297531F4D317A009D3044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277297521F4D317A009D3044 /* Assets.xcassets */; };
+		277297561F4D317A009D3044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277297541F4D317A009D3044 /* LaunchScreen.storyboard */; };
+		277297611F4D317A009D3044 /* WebRTCVideoChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277297601F4D317A009D3044 /* WebRTCVideoChatTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2772975D1F4D317A009D3044 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 277297401F4D317A009D3044 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 277297471F4D317A009D3044;
+			remoteInfo = WebRTCVideoChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		277297481F4D317A009D3044 /* WebRTCVideoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebRTCVideoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2772974B1F4D317A009D3044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2772974D1F4D317A009D3044 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		277297501F4D317A009D3044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		277297521F4D317A009D3044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		277297551F4D317A009D3044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		277297571F4D317A009D3044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2772975C1F4D317A009D3044 /* WebRTCVideoChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebRTCVideoChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		277297601F4D317A009D3044 /* WebRTCVideoChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTCVideoChatTests.swift; sourceTree = "<group>"; };
+		277297621F4D317A009D3044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		277297451F4D317A009D3044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277297591F4D317A009D3044 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2772973F1F4D317A009D3044 = {
+			isa = PBXGroup;
+			children = (
+				2772974A1F4D317A009D3044 /* WebRTCVideoChat */,
+				2772975F1F4D317A009D3044 /* WebRTCVideoChatTests */,
+				277297491F4D317A009D3044 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		277297491F4D317A009D3044 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				277297481F4D317A009D3044 /* WebRTCVideoChat.app */,
+				2772975C1F4D317A009D3044 /* WebRTCVideoChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2772974A1F4D317A009D3044 /* WebRTCVideoChat */ = {
+			isa = PBXGroup;
+			children = (
+				2772974B1F4D317A009D3044 /* AppDelegate.swift */,
+				2772974D1F4D317A009D3044 /* ViewController.swift */,
+				2772974F1F4D317A009D3044 /* Main.storyboard */,
+				277297521F4D317A009D3044 /* Assets.xcassets */,
+				277297541F4D317A009D3044 /* LaunchScreen.storyboard */,
+				277297571F4D317A009D3044 /* Info.plist */,
+			);
+			path = WebRTCVideoChat;
+			sourceTree = "<group>";
+		};
+		2772975F1F4D317A009D3044 /* WebRTCVideoChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				277297601F4D317A009D3044 /* WebRTCVideoChatTests.swift */,
+				277297621F4D317A009D3044 /* Info.plist */,
+			);
+			path = WebRTCVideoChatTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		277297471F4D317A009D3044 /* WebRTCVideoChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277297651F4D317A009D3044 /* Build configuration list for PBXNativeTarget "WebRTCVideoChat" */;
+			buildPhases = (
+				277297441F4D317A009D3044 /* Sources */,
+				277297451F4D317A009D3044 /* Frameworks */,
+				277297461F4D317A009D3044 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebRTCVideoChat;
+			productName = WebRTCVideoChat;
+			productReference = 277297481F4D317A009D3044 /* WebRTCVideoChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2772975B1F4D317A009D3044 /* WebRTCVideoChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 277297681F4D317A009D3044 /* Build configuration list for PBXNativeTarget "WebRTCVideoChatTests" */;
+			buildPhases = (
+				277297581F4D317A009D3044 /* Sources */,
+				277297591F4D317A009D3044 /* Frameworks */,
+				2772975A1F4D317A009D3044 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2772975E1F4D317A009D3044 /* PBXTargetDependency */,
+			);
+			name = WebRTCVideoChatTests;
+			productName = WebRTCVideoChatTests;
+			productReference = 2772975C1F4D317A009D3044 /* WebRTCVideoChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		277297401F4D317A009D3044 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Kyle Redfearn";
+				TargetAttributes = {
+					277297471F4D317A009D3044 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = DH272BUE3A;
+						ProvisioningStyle = Automatic;
+					};
+					2772975B1F4D317A009D3044 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = DH272BUE3A;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 277297471F4D317A009D3044;
+					};
+				};
+			};
+			buildConfigurationList = 277297431F4D317A009D3044 /* Build configuration list for PBXProject "WebRTCVideoChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2772973F1F4D317A009D3044;
+			productRefGroup = 277297491F4D317A009D3044 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				277297471F4D317A009D3044 /* WebRTCVideoChat */,
+				2772975B1F4D317A009D3044 /* WebRTCVideoChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		277297461F4D317A009D3044 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277297561F4D317A009D3044 /* LaunchScreen.storyboard in Resources */,
+				277297531F4D317A009D3044 /* Assets.xcassets in Resources */,
+				277297511F4D317A009D3044 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2772975A1F4D317A009D3044 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		277297441F4D317A009D3044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2772974E1F4D317A009D3044 /* ViewController.swift in Sources */,
+				2772974C1F4D317A009D3044 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		277297581F4D317A009D3044 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				277297611F4D317A009D3044 /* WebRTCVideoChatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2772975E1F4D317A009D3044 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 277297471F4D317A009D3044 /* WebRTCVideoChat */;
+			targetProxy = 2772975D1F4D317A009D3044 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2772974F1F4D317A009D3044 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				277297501F4D317A009D3044 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		277297541F4D317A009D3044 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				277297551F4D317A009D3044 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		277297631F4D317A009D3044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		277297641F4D317A009D3044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		277297661F4D317A009D3044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DH272BUE3A;
+				INFOPLIST_FILE = WebRTCVideoChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleredfearn.WebRTCVideoChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		277297671F4D317A009D3044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DH272BUE3A;
+				INFOPLIST_FILE = WebRTCVideoChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleredfearn.WebRTCVideoChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		277297691F4D317A009D3044 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = DH272BUE3A;
+				INFOPLIST_FILE = WebRTCVideoChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleredfearn.WebRTCVideoChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebRTCVideoChat.app/WebRTCVideoChat";
+			};
+			name = Debug;
+		};
+		2772976A1F4D317A009D3044 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = DH272BUE3A;
+				INFOPLIST_FILE = WebRTCVideoChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleredfearn.WebRTCVideoChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebRTCVideoChat.app/WebRTCVideoChat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		277297431F4D317A009D3044 /* Build configuration list for PBXProject "WebRTCVideoChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277297631F4D317A009D3044 /* Debug */,
+				277297641F4D317A009D3044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		277297651F4D317A009D3044 /* Build configuration list for PBXNativeTarget "WebRTCVideoChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277297661F4D317A009D3044 /* Debug */,
+				277297671F4D317A009D3044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		277297681F4D317A009D3044 /* Build configuration list for PBXNativeTarget "WebRTCVideoChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				277297691F4D317A009D3044 /* Debug */,
+				2772976A1F4D317A009D3044 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 277297401F4D317A009D3044 /* Project object */;
+}
