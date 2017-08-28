@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, WebRTCClientDelegate {
 
+    @IBOutlet weak var connectButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        WebRTCClient.shared.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +23,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func connectTapped(_ sender: Any) {
+        WebRTCClient.shared.startConnection()
+    }
 
+    func webRTCClientReady() {
+        self.connectButton.isEnabled = true
+    }
+    
 }
 

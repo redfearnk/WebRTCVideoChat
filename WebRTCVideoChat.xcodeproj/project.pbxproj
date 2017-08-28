@@ -13,6 +13,12 @@
 		277297531F4D317A009D3044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 277297521F4D317A009D3044 /* Assets.xcassets */; };
 		277297561F4D317A009D3044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 277297541F4D317A009D3044 /* LaunchScreen.storyboard */; };
 		277297611F4D317A009D3044 /* WebRTCVideoChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277297601F4D317A009D3044 /* WebRTCVideoChatTests.swift */; };
+		277EF92B1F4E72180046F4EE /* PubNub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 277298D61F4E70CC009D3044 /* PubNub.framework */; };
+		277EF92C1F4E72180046F4EE /* PubNub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 277298D61F4E70CC009D3044 /* PubNub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		277EF92D1F4E72180046F4EE /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772976B1F4D31B6009D3044 /* WebRTC.framework */; };
+		277EF92E1F4E72180046F4EE /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2772976B1F4D31B6009D3044 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		277EF9311F4E746D0046F4EE /* Signaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EF9301F4E746D0046F4EE /* Signaler.swift */; };
+		277EF9331F4E79A50046F4EE /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EF9321F4E79A50046F4EE /* WebRTCClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +31,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		277EF92F1F4E72180046F4EE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				277EF92C1F4E72180046F4EE /* PubNub.framework in Embed Frameworks */,
+				277EF92E1F4E72180046F4EE /* WebRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		277297481F4D317A009D3044 /* WebRTCVideoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebRTCVideoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2772974B1F4D317A009D3044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +57,10 @@
 		2772975C1F4D317A009D3044 /* WebRTCVideoChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebRTCVideoChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		277297601F4D317A009D3044 /* WebRTCVideoChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRTCVideoChatTests.swift; sourceTree = "<group>"; };
 		277297621F4D317A009D3044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2772976B1F4D31B6009D3044 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
+		277298D61F4E70CC009D3044 /* PubNub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PubNub.framework; sourceTree = "<group>"; };
+		277EF9301F4E746D0046F4EE /* Signaler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signaler.swift; sourceTree = "<group>"; };
+		277EF9321F4E79A50046F4EE /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277EF92B1F4E72180046F4EE /* PubNub.framework in Frameworks */,
+				277EF92D1F4E72180046F4EE /* WebRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,12 +104,16 @@
 		2772974A1F4D317A009D3044 /* WebRTCVideoChat */ = {
 			isa = PBXGroup;
 			children = (
+				277298D61F4E70CC009D3044 /* PubNub.framework */,
+				2772976B1F4D31B6009D3044 /* WebRTC.framework */,
 				2772974B1F4D317A009D3044 /* AppDelegate.swift */,
 				2772974D1F4D317A009D3044 /* ViewController.swift */,
 				2772974F1F4D317A009D3044 /* Main.storyboard */,
 				277297521F4D317A009D3044 /* Assets.xcassets */,
 				277297541F4D317A009D3044 /* LaunchScreen.storyboard */,
 				277297571F4D317A009D3044 /* Info.plist */,
+				277EF9301F4E746D0046F4EE /* Signaler.swift */,
+				277EF9321F4E79A50046F4EE /* WebRTCClient.swift */,
 			);
 			path = WebRTCVideoChat;
 			sourceTree = "<group>";
@@ -106,6 +137,7 @@
 				277297441F4D317A009D3044 /* Sources */,
 				277297451F4D317A009D3044 /* Frameworks */,
 				277297461F4D317A009D3044 /* Resources */,
+				277EF92F1F4E72180046F4EE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,8 +233,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				277EF9311F4E746D0046F4EE /* Signaler.swift in Sources */,
 				2772974E1F4D317A009D3044 /* ViewController.swift in Sources */,
 				2772974C1F4D317A009D3044 /* AppDelegate.swift in Sources */,
+				277EF9331F4E79A50046F4EE /* WebRTCClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +378,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DH272BUE3A;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WebRTCVideoChat",
+				);
 				INFOPLIST_FILE = WebRTCVideoChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyleredfearn.WebRTCVideoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,7 +397,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DH272BUE3A;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WebRTCVideoChat",
+				);
 				INFOPLIST_FILE = WebRTCVideoChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kyleredfearn.WebRTCVideoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +460,7 @@
 				277297671F4D317A009D3044 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		277297681F4D317A009D3044 /* Build configuration list for PBXNativeTarget "WebRTCVideoChatTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +469,7 @@
 				2772976A1F4D317A009D3044 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
