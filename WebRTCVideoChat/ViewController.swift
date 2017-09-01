@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import WebRTC
 
 class ViewController: UIViewController, WebRTCClientDelegate {
 
     @IBOutlet weak var connectButton: UIButton!
+    weak var remoteView: RTCEAGLVideoView?
+    weak var localView: RTCEAGLVideoView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +34,38 @@ class ViewController: UIViewController, WebRTCClientDelegate {
         self.connectButton.isEnabled = true
     }
     
+    func webRTCClientDidAddRemote(videoTrack: RTCVideoTrack) {
+        DispatchQueue.main.async {
+            self.connectButton.isHidden = true
+            if self.remoteView == nil {
+                let videoView = RTCEAGLVideoView(frame: self.view.bounds)
+                if let local = self.localView {
+                    self.view.insertSubview(videoView, belowSubview: local)
+                } else {
+                    self.view.addSubview(videoView)
+                }
+                self.remoteView = videoView
+            }
+            videoTrack.add(self.remoteView!)
+        }
+    }
+    
+    func webRTCClientDidAddLocal(videoTrack: RTCVideoTrack) {
+        DispatchQueue.main.async {
+            self.connectButton.isHidden = true
+            if self.localView == nil {
+                let videoView = RTCEAGLVideoView(frame: CGRect(x: 0, y: 0, width:100, height: 100))
+                self.view.addSubview(videoView)
+                self.localView = videoView
+            }
+            videoTrack.add(self.localView!)
+        }
+    }
+    
+    func didRecieve(image: UIImage) {
+//        if let view = self.openGLView {
+////            vie
+//        }
+    }
 }
 

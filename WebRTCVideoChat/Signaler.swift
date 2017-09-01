@@ -26,6 +26,7 @@ protocol SignalingDelegate: class {
     func didReceiveOffer(_ sdp: String)
     func didRecieveAnswer(_ sdp: String)
     func didRecieveICECandidate(sdp: String, sdpMLineIndex: Int32, sdpMid: String?)
+    func didRecieve(image: UIImage)
     func signalerReady()
 }
 
@@ -34,9 +35,11 @@ class Signaler: NSObject, PNObjectEventListener {
     
     var pubnub: PubNub?
     weak var delegate: SignalingDelegate?
-    let channel = "Channel-1w7tkamaw"
-    let publishKey = "pub-c-ef5d6fcd-3c21-4385-b02f-baee7b92349d"
-    let subscribeKey = "sub-c-e7757fca-87b5-11e7-abf7-cae3e7536ffb"
+    let channel = "439"
+    let publishKey = "<insert key here>"
+    let subscribeKey = "<insert key here>"
+    var uuid: String?
+    var number: String?
     
     override init() {
         super.init()
@@ -47,31 +50,48 @@ class Signaler: NSObject, PNObjectEventListener {
     }
     
     func sendOffer(_ sdp: String) {
-        let message = [SingalingKey.type.rawValue: SignalingType.offer.rawValue,
-                       SingalingKey.sdp.rawValue:sdp]
+        let id = UUID().uuidString.lowercased()
+        let num = "321"
+        self.number = num
+        self.uuid = id
+        let message: [String : Any] = ["id": id,
+                                       "number": num,
+                                       "packet": [SingalingKey.type.rawValue: SignalingType.offer.rawValue,
+                                                  SingalingKey.sdp.rawValue:sdp]]
         self.pubnub?.publish(message, toChannel: self.channel, withCompletion: { (status) in
             print("Offer sent with status: \(status.data.information)")
         })
     }
     
     func sendAnswer(_ sdp: String) {
-        let message = [SingalingKey.type.rawValue: SignalingType.answer.rawValue,
-                       SingalingKey.sdp.rawValue:sdp]
-        self.pubnub?.publish(message, toChannel: self.channel, withCompletion: { (status) in
-            print("Answer sent with status: \(status.data.information)")
-        })
+        if let id = self.uuid, let num = self.number {
+            let message: [String : Any] = ["id": id,
+                                           "number": num,
+                                           "packet": [SingalingKey.type.rawValue: SignalingType.answer.rawValue,
+                                                      SingalingKey.sdp.rawValue:sdp]]
+            self.pubnub?.publish(message, toChannel: self.channel, withCompletion: { (status) in
+                print("Answer sent with status: \(status.data.information)")
+            })
+        }
     }
     
     func sendICECandidate(sdp: String, sdpMLineIndex: Int32, sdpMid: String?) {
-        var message: [String : Any] = [SingalingKey.type.rawValue: SignalingType.ice.rawValue,
-                                       SingalingKey.sdp.rawValue: sdp,
-                                       SingalingKey.sdpMLineIndex.rawValue: sdpMLineIndex]
-        if let sdpMid = sdpMid {
-            message[SingalingKey.sdpMid.rawValue] = sdpMid
+        if let id = self.uuid, let num = self.number {
+            var message: [String : Any] = ["id": id,
+                                           "number": num,
+                                           "packet": ["candidate": sdp,
+                                                      SingalingKey.sdpMLineIndex.rawValue: sdpMLineIndex]]
+            
+            if let sdpMid = sdpMid {
+                if var package = message["packet"] as? [String : Any] {
+                    package[SingalingKey.sdpMid.rawValue] = sdpMid
+                    message["packet"] = package
+                }
+            }
+            self.pubnub?.publish(message, toChannel: self.channel, withCompletion: { (status) in
+                print("ICE candidate sent with status: \(status.data.information)")
+            })
         }
-        self.pubnub?.publish(message, toChannel: self.channel, withCompletion: { (status) in
-            print("ICE candidate sent with status: \(status.data.information)")
-        })
     }
     
     func client(_ client: PubNub, didReceive status: PNStatus) {
@@ -82,25 +102,51 @@ class Signaler: NSObject, PNObjectEventListener {
     }
     
     func client(_ client: PubNub, didReceiveMessage message: PNMessageResult) {
-        print("PubNub: \(message.data.message!)")
-        if let dict = message.data.message as? [String : Any] {
-            if let type = dict[SingalingKey.type.rawValue] as? String {
-                if type == SignalingType.offer.rawValue {
-                    if let sdp = dict[SingalingKey.sdp.rawValue] as? String {
-                        self.delegate?.didReceiveOffer(sdp)
+        if client.currentConfiguration().uuid != message.data.publisher {
+//            print("PubNub: \(message.data.message!)")
+            if let dict = message.data.message as? [String : Any] {
+                if let packet = dict["packet"] as? [String : Any] {
+                    if let type = packet[SingalingKey.type.rawValue] as? String {
+                        if type == SignalingType.offer.rawValue {
+                            if let sdp = packet[SingalingKey.sdp.rawValue] as? String {
+                                self.delegate?.didReceiveOffer(sdp)
+                            }
+                            if let id = dict["id"] as? String {
+                                self.uuid = id
+                            }
+                            if let num = dict["number"] as? String {
+                                self.number = num
+                            }
+                        } else if type == SignalingType.answer.rawValue {
+                            if let sdp = packet[SingalingKey.sdp.rawValue] as? String {
+                                self.delegate?.didRecieveAnswer(sdp)
+                            }
+                        } else if type == SignalingType.ice.rawValue {
+                            if let sdp = packet[SingalingKey.sdp.rawValue] as? String,
+                                let sdpMLineIndex = packet[SingalingKey.sdpMLineIndex.rawValue] as? Int32 {
+                                var sdpMidOptional: String? = nil
+                                if let sdpMid = packet[SingalingKey.sdpMid.rawValue] as? String {
+                                    sdpMidOptional = sdpMid
+                                }
+                                self.delegate?.didRecieveICECandidate(sdp: sdp, sdpMLineIndex: sdpMLineIndex, sdpMid: sdpMidOptional)
+                            }
+                        }
                     }
-                } else if type == SignalingType.answer.rawValue {
-                    if let sdp = dict[SingalingKey.sdp.rawValue] as? String {
-                        self.delegate?.didRecieveAnswer(sdp)
-                    }
-                } else if type == SignalingType.ice.rawValue {
-                    if let sdp = dict[SingalingKey.sdp.rawValue] as? String,
-                        let sdpMLineIndex = dict[SingalingKey.sdpMLineIndex.rawValue] as? Int32 {
+                    if let candidate = packet["candidate"] as? String,
+                       let sdpMLineIndex = packet[SingalingKey.sdpMLineIndex.rawValue] as? Int32 {
                         var sdpMidOptional: String? = nil
-                        if let sdpMid = dict[SingalingKey.sdpMid.rawValue] as? String {
+                        if let sdpMid = packet[SingalingKey.sdpMid.rawValue] as? String {
                             sdpMidOptional = sdpMid
                         }
-                        self.delegate?.didRecieveICECandidate(sdp: sdp, sdpMLineIndex: sdpMLineIndex, sdpMid: sdpMidOptional)
+                        self.delegate?.didRecieveICECandidate(sdp: candidate, sdpMLineIndex: sdpMLineIndex, sdpMid: sdpMidOptional)
+                    }
+                    if let thumbnail = packet["thumbnail"] as? String {
+                        if let url = URL(string: thumbnail) {
+                            let data = try! Data(contentsOf: url)
+                            if let image = UIImage(data: data) {
+                                self.delegate?.didRecieve(image: image)
+                            }
+                        }
                     }
                 }
             }
